@@ -1,13 +1,10 @@
 {% extends "application.html" %}
-
 {% block content %}
-<form action="" method="post">
+<h1>New menu item | {{ restaurant.name }}</h1>
+<form method="post">
     {% csrf_token %}
-    <fieldset>
-        <label for="category">Category:</label>
-        <input type="text" name="category">
-        <input type="submit" value="Include">
-    </fieldset>
+    {{ form.as_p }}
+    <button type="submit">Include</button>
+    <a href="{% url 'menu' restaurant.id %}">Cancel</a>
 </form>
-
 {% endblock content %}

@@ -1,14 +1,10 @@
 {% extends "application.html" %}
-
 {% block content %}
-    <h1>Restaurant | <small>edit</small></h1>
-    <form action="" method="post">
-        {% csrf_token %}
-        <fieldset>
-            <label for="name">Name:</label>
-            <input type="text" name="name" value="{{ restaurant.name }}">
-            <input type="submit" value="Confirm">
-            <a href="/">Cancel</a>
-            </fieldset>
-    </form>
+<h1>Restaurant | edit</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Confirm</button>
+    <a href="{% url 'show_restaurants' %}">Cancel</a>
+</form>
 {% endblock content %}

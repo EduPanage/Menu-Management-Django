@@ -1,14 +1,10 @@
 {% extends "application.html" %}
 {% block content %}
-
-<h1>Menu Item | delete</h1>
-
+<h1>Menu item | delete</h1>
 <p>Are you sure you want to delete <strong>{{ menu_item.name }}</strong>?</p>
-
-<form method="POST">
+<form method="post">
     {% csrf_token %}
-    <button type="submit">Confirm Delete</button>
+    <button type="submit">Confirm delete</button>
     <a href="{% url 'menu' restaurant_id %}">Cancel</a>
 </form>
-
 {% endblock content %}
